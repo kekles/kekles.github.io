@@ -249,8 +249,8 @@
             }
 
             ctx.putImageData(imageData, 0, 0);
-            var result = xBR(ctx, 0, 0, canvas.width*2, canvas.height*2);
-            ctx.putImageData(result, 0, 0);
+            //var result = xBR(ctx, 0, 0, canvas.width*2, canvas.height*2);
+            //ctx.putImageData(result, 0, 0);
             
 
 
