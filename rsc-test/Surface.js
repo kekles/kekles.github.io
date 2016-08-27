@@ -240,7 +240,7 @@
 
                         color = this.toColor(color);
 
-                        imageDat*2a.data[colorIdx++] = color[0];
+                        imageData.data[colorIdx++] = color[0];
                         imageData.data[colorIdx++] = color[1];
                         imageData.data[colorIdx++] = color[2];
                         imageData.data[colorIdx++] = 255;
