@@ -222,6 +222,9 @@
         },
         getCanvas(){
             var canvas = document.createElement('canvas');
+            var canvas2 = document.createElement('canvas');
+            var ctx2 = canvas2.getContext('2d');
+
             canvas.width = this.width;
             canvas.height = this.height;
             var ctx = canvas.getContext('2d');
@@ -249,12 +252,16 @@
             }
 
             ctx.putImageData(imageData, 0, 0);
-            var result = xBR(ctx, 0, 0, canvas.width*2, canvas.height*2);
-            ctx.putImageData(result, 0, 0);
+
+           
+            canvas2.width  = canvas.width * 2;
+            canvas2.height = canvas.height * 2;
+            var result = xBR(ctx, 0, 0, canvas.width, canvas.height);
+            ctx2.putImageData(result, 0 ,0)
             
 
 
-            return canvas;
+            return canvas2;
         },
         parseSprite(spriteId, spriteData, indexData, frameCount) {
 
