@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Epic Threads</title>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/links.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	
+  	$("#image").load(function() { 
+		$('#image_holder').hide();
+		$(this).fadeIn();
+	}); 
+	
+	$('a[id=image_link]').click(function (e) {
+		$('a[id=image_link]').removeClass('active');
+		$(this).addClass('active');
+	});
+	$('a[href=' + window.location.hash + ']').click();
+});
+
+function swap_image(image) {
+	$("#image").fadeOut(function() { 
+		$(this).attr("src", image + ".png");
+		$('#image_holder').html('<img src="loading.gif" alt="Loading your image, please wait..." />');
+		$('#image_holder').show();	
+		$(window).scrollTop(0);
+	}); 
+}
+</script>
+
+<style type="text/css">
+#title {
+	width:100%;
+	height:100px;
+	background-color:black;
+	float:right;
+	text-align:center;
+}
+
+body {
+	margin:0;
+	padding:0;
+	line-height: 1.5em;
+}
+
+#contentwrapper {
+	float: left;
+	width: 100%;
+}
+
+#contentcolumn {
+	margin-left: 300px;
+	width: auto;
+}
+
+#leftcolumn {
+	float: left;
+	width: 300px;
+	margin-left: -100%;
+	background-color:black;
+}
+
+#leftcolumn a {
+	color:white;
+}
+
+#leftcolumn a:active {
+	text-decoration:underline;
+}
+
+.innertube{
+	margin: 10px;
+	margin-top: 0;
+}
+
+.active {
+	font-weight: bold;
+}
+
+#image {
+	width: auto;
+	display: none;
+}
+</style>
+
+</head>
+
+<body>
+<div id="maincontainer">
+	<div id="title"><img src="title.png" alt="Fat Cookie's Epic Threads" /></div>
+	<div id="contentwrapper">
+		<div id="contentcolumn">
+			<div class="innertube">
+				<div id="image_holder">Select an image from the left.</div>
+				<img src="" id="image">
+			</div>
+		</div>
+	</div>
+
+	<div id="leftcolumn">
+			<div class="innertube" id="nav">
+				<script type="text/javascript">gen_nav();</script>
+			</div>
+	</div>
+</div>
+
+
+</body></html>
